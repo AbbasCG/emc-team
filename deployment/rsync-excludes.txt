@@ -1,0 +1,53 @@
+# Rsync/tar exclude patterns for production release packaging
+# Paths are relative to project root
+
+.git/
+.github/
+.cursor/
+.codex/
+.claude/
+.idea/
+.vscode/
+.nova/
+.zed/
+node_modules/
+deployment/release/
+tests/
+.phpunit.cache/
+.phpunit.result.cache
+phpunit.xml
+*.log
+.env
+.env.*
+!.env.example
+auth.json
+Homestead.json
+Homestead.yaml
+Thumbs.db
+.DS_Store
+
+# Runtime — recreate on server
+storage/logs/*
+!storage/logs/.gitignore
+storage/framework/cache/*
+!storage/framework/cache/.gitignore
+!storage/framework/cache/data/
+storage/framework/cache/data/*
+!storage/framework/cache/data/.gitignore
+storage/framework/sessions/*
+!storage/framework/sessions/.gitignore
+storage/framework/views/*
+!storage/framework/views/.gitignore
+storage/pail/
+public/hot
+public/storage
+
+# Do not ship local SQLite
+database/database.sqlite
+
+# Dev-only bootstrap caches (regenerate on server with PHP 8.3)
+bootstrap/cache/config.php
+bootstrap/cache/routes*.php
+
+# Dev tooling
+_ide_helper.php

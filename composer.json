@@ -54,6 +54,11 @@
             "@php artisan config:clear --ansi @no_additional_args",
             "@php artisan test"
         ],
+        "deploy-build": [
+            "@composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction",
+            "@php artisan package:discover --ansi",
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
